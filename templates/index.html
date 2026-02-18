@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="티울영어 – 직장인과 성인을 위한 체계적인 영어 전문 학원. 기초 회화부터 비즈니스 영어까지." />
+  <meta name="keywords" content="성인영어, 직장인영어, 비즈니스영어, 영어학원, 티울영어" />
+  <title>티울영어 – 성인 영어 전문 학원</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <header class="site-header" id="top">
+    <nav class="nav-inner">
+      <a href="#top" class="nav-logo">
+        <span class="logo-text-fallback">티울영어</span>
+      </a>
+      <button class="nav-toggle" aria-label="메뉴 열기" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#intro">학원 소개</a></li>
+        <li><a href="#director">원장 소개</a></li>
+        <li><a href="#schedule">수업 스케줄</a></li>
+        <li><a href="#blog">공지사항</a></li>
+        <li><a href="#consult" class="nav-cta">상담 문의</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div class="hero-badge">성인 영어 전문</div>
+        <h1 class="hero-headline">
+          나의 속도로,<br />
+          <em>영어를 틔우다.</em>
+        </h1>
+        <p class="hero-sub">
+          바쁜 직장인과 자기계발을 원하는 성인을 위해 설계된<br class="br-desktop" />
+          체계적이고 실용적인 영어 학습 환경을 제공합니다.
+        </p>
+        <a href="#consult" class="btn btn-primary">상담 문의하기</a>
+      </div>
+      <div class="hero-decoration" aria-hidden="true">
+        <div class="hero-line"></div>
+        <div class="hero-circle"></div>
+      </div>
+    </section>
+
+    <!-- ── INTRO ── -->
+    <section class="section intro" id="intro">
+      <div class="container">
+        <div class="section-label">Academy</div>
+        <h2 class="section-title">티울영어 소개</h2>
+        <div class="intro-grid">
+          <div class="intro-philosophy">
+            <h3>학원 철학</h3>
+            <p>
+              <strong>SMART KOREAN, SMARTER</strong><br />
+              티울영어는 더 효율적인 배움이 더 단단한 실력을 만든다고 믿습니다. 화려함보다 본질에 집중하며, 배운 것이 실제로 쓰이는 순간까지 책임지는 수업을 지향합니다.
+            </p>
+            <p>우리는 속도를 앞세우지 않습니다. 대신 한 문장을 정확히 이해하고, 스스로 말해보는 경험을 반복합니다. 그 축적이 결국 실력이 됩니다.</p>
+            <p>티울영어의 수업은 빠르게 지나가는 강의가 아니라 일상 속에서 이어지는 훈련입니다. 조용하지만 분명하게, 실력을 틔워가는 공간입니다.</p>
+          </div>
+          <div class="intro-reasons">
+            <h3>성인 학습자에게 티울이 맞는 이유</h3>
+            <ul class="reason-list">
+              <li>
+                <span class="reason-num">01</span>
+                <div>
+                  <strong>일상 활용 중심 커리큘럼</strong>
+                  <p>일상에서 자주 쓰는 표현을 중심으로, 자연스럽게 말할 수 있도록 구성합니다.</p>
+                </div>
+              </li>
+              <li>
+                <span class="reason-num">02</span>
+                <div>
+                  <strong>소규모 집중 수업</strong>
+                  <p>최대 5인 이하 클래스로 운영하여 개인별 피드백과 충분한 말하기 기회를 보장합니다.</p>
+                </div>
+              </li>
+              <li>
+                <span class="reason-num">03</span>
+                <div>
+                  <strong>유연한 그룹수업 운영</strong>
+                  <p>오전과 저녁 시간대 운영으로 바쁜 일정 속에서도 꾸준히 이어갈 수 있습니다.</p>
+                </div>
+              </li>
+              <li>
+                <span class="reason-num">04</span>
+                <div>
+                  <strong>체계적 레벨 관리</strong>
+                  <p>입문부터 심화까지 명확한 단계 구분과 정기적인 수준 진단으로 학습 방향을 점검합니다.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DIRECTOR ── -->
+    <section class="section director" id="director">
+      <div class="container">
+        <div class="section-label">Director</div>
+        <h2 class="section-title">원장 소개</h2>
+        <div class="director-grid">
+          <div class="director-image-wrap">
+            <img src="{{ url_for('static', filename='images/director.jpg') }}" alt="원장 사진"
+                 onerror="this.parentElement.classList.add('img-placeholder')" />
+          </div>
+          <div class="director-bio">
+            <p class="director-name">박 미 희 <span>원장</span></p>
+            <p class="director-tagline">
+              "영어는 시험이 아니라, 삶과 연결되어야 합니다."
+            </p>
+
+            <div class="bio-block">
+              <h4>학력</h4>
+              <ul>
+                <li>캐나다 University of British Columbia 졸업 심리학 전공</li>
+                <li>미국 Georgia Institute of Technology, Data Science 수료</li>
+                <li>미국 &amp; 캐나다 15년 거주</li>
+              </ul>
+            </div>
+
+            <div class="bio-block">
+              <h4>경력</h4>
+              <ul>
+                <li>현 티울영어 원장 (2025년 개원~현재)</li>
+                <li>전 YBM 종로 아이엘츠 강사</li>
+                <li>전 외국계 회사 Data Science 엔지니어</li>
+                <li>전 파고다원 강남 강사</li>
+              </ul>
+            </div>
+
+            <div class="bio-block">
+              <h4>전문 분야</h4>
+              <ul>
+                <li>성인 의사소통 영어 및 발음 교정</li>
+                <li>비즈니스 이메일 및 프레젠테이션 영어</li>
+                <li>TOEFL / IELTS 전략적 수험 지도</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SCHEDULE ── -->
+    <section class="section schedule-section" id="schedule">
+      <div class="container">
+        <div class="section-label">Schedule</div>
+        <h2 class="section-title">수업 안내</h2>
+        <p class="section-sub">{{ schedule.month }} 기준 운영 중인 과정입니다.</p>
+
+        <!-- ① 레벨 카드 4개 -->
+        <div class="level-grid">
+          {% for lv in schedule.levels %}
+          <div class="level-card">
+            <div class="level-index">0{{ loop.index }}</div>
+            <h3 class="level-name">{{ lv.name }}</h3>
+            <ul class="level-meta">
+              <li>
+                <span class="meta-label">과정 소개</span>
+                <span>{{ lv.description }}</span>
+              </li>
+              <li>
+                <span class="meta-label">이런 분께</span>
+                <span>{{ lv.target }}</span>
+              </li>
+              <li>
+                <span class="meta-label">수업 특징</span>
+                <span>{{ lv.feature }}</span>
+              </li>
+            </ul>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- ② 시간표 테이블 -->
+        <!-- ② 비주얼 주간 타임테이블 -->
+        <div class="timetable-wrap">
+          <div class="timetable-header">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            {{ schedule.month }} 그룹수업 시간표
+          </div>
+          <div class="visual-tt">
+            <!-- 헤더 행: 빈칸 + 월 화 수 목 -->
+            <div class="vtt-head">
+              <div class="vtt-time-col"></div>
+              <div class="vtt-day">월</div>
+              <div class="vtt-day">화</div>
+              <div class="vtt-day">수</div>
+              <div class="vtt-day">목</div>
+            </div>
+            <!-- 시간 슬롯 행들: schedule.timetable 에서 중복없이 시간 추출 후 렌더 -->
+            {%- set slots = [
+              ("10:00 – 10:50", ["기초 회화", "", "기초 회화", "기초 회화"]),
+              ("11:00 – 11:50", ["입문 회화", "일상 회화", "입문 회화", "일상 회화"]),
+              ("12:00 – 12:50", ["", "입문 회화", "", "입문 회화"]),
+              ("14:00 – 16:30", ["시험 대비 회화", "", "시험 대비 회화", ""]),
+              ("18:00 – 18:50", ["일상 회화", "", "일상 회화", ""]),
+              ("19:00 – 19:50", ["기초 회화", "", "기초 회화", ""]),
+              ("20:00 – 20:50", ["일상 회화", "", "일상 회화", ""])
+            ] -%}
+            {%- set level_colors = {
+              "기초 회화":    "lv-basic",
+              "입문 회화":    "lv-intro",
+              "일상 회화":    "lv-daily",
+              "시험 대비 회화": "lv-exam"
+            } -%}
+            {% for time_label, cells in slots %}
+            <div class="vtt-row">
+              <div class="vtt-time">{{ time_label }}</div>
+              {% for cell in cells %}
+              <div class="vtt-cell {% if cell %}filled {{ level_colors.get(cell, '') }}{% else %}empty{% endif %}">
+                {% if cell %}<span>{{ cell }}{% if cell == "시험 대비 회화" %}<em>토플 / 아이엘츠</em>{% endif %}</span>{% endif %}
+              </div>
+              {% endfor %}
+            </div>
+            {% endfor %}
+            <!-- 범례 -->
+            <div class="vtt-legend">
+              <div class="legend-item"><span class="legend-dot lv-basic"></span>기초 회화</div>
+              <div class="legend-item"><span class="legend-dot lv-intro"></span>입문 회화</div>
+              <div class="legend-item"><span class="legend-dot lv-daily"></span>일상 회화</div>
+              <div class="legend-item"><span class="legend-dot lv-exam"></span>시험 대비 회화</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ③ 개인수업 강조 배너 -->
+        <div class="private-banner">
+          <div class="private-banner-inner">
+            <div class="private-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="private-text">
+              <strong>개인 맞춤 1:1 수업도 가능합니다</strong>
+              <p>원하는 시간과 목표에 맞춰 원장님과 직접 조율하여 진행합니다.</p>
+            </div>
+            <a href="#consult" class="btn btn-primary private-cta">문의하기</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── BLOG / NOTICE ── -->
+    <section class="section blog-section" id="blog">
+      <div class="container">
+        <div class="blog-inner">
+          <div class="blog-text">
+            <div class="section-label">Notice</div>
+            <h2 class="section-title">공지사항 &amp; 블로그</h2>
+            <p>
+              수업 일정 변경, 신규 클래스 개설, 학습 팁 등
+              학원 소식을 네이버 블로그에서 정기적으로 전합니다.
+              방문하셔서 최신 소식을 확인하세요.
+            </p>
+            <a href="https://blog.naver.com/tiulenglish" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              네이버 블로그 바로가기
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+          </div>
+          <!-- <div class="blog-notice-preview" aria-hidden="true">
+            <div class="notice-item">
+              <span class="notice-date">2026.02.28</span>
+              <span class="notice-title">3월 신규 개강 안내 및 수강 신청 방법</span>
+            </div>
+            <div class="notice-item">
+              <span class="notice-date">2026.02.15</span>
+              <span class="notice-title">비즈니스 영어반 레벨 테스트 일정 공지</span>
+            </div>
+            <div class="notice-item">
+              <span class="notice-date">2026.02.05</span>
+              <span class="notice-title">직장인을 위한 영어 학습 루틴 만들기</span>
+            </div>
+            <div class="notice-more">더 많은 소식은 블로그에서 →</div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- ── CONSULTATION ── -->
+    <section class="section consult-section" id="consult">
+      <div class="container">
+        <div class="consult-inner">
+          <div class="section-label">Consultation</div>
+          <h2 class="section-title">수강 상담 문의</h2>
+          <p class="consult-sub">
+            레벨 진단부터 수업 방식, 수강료까지 부담 없이 문의해 주세요.<br />
+            친절하게 안내해 드리겠습니다.
+          </p>
+          <div class="consult-buttons">
+            <a href="https://talk.naver.com/profile/wgxoy34/form/1" target="_blank" rel="noopener noreferrer" class="btn btn-consult btn-naver">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 3H5.1A2.1 2.1 0 003 5.1v8.4a2.1 2.1 0 002.1 2.1h3.15L9.9 21l5.25-5.4H18.9A2.1 2.1 0 0021 13.5V5.1A2.1 2.1 0 0018.9 3z"/></svg>
+              네이버 톡톡 상담 요청
+            </a>
+            <a href="https://pf.kakao.com/_Cqynn" target="_blank" rel="noopener noreferrer" class="btn btn-consult btn-kakao">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C7.03 3 3 6.36 3 10.5c0 2.7 1.74 5.07 4.35 6.45l-.9 3.3 3.75-2.46c.57.09 1.17.12 1.8.12 4.97 0 9-3.36 9-7.5S16.97 3 12 3z"/></svg>
+              카카오톡 채널 채팅
+            </a>
+          </div>
+          <p class="consult-hours">
+            운영 시간 &nbsp;|&nbsp; 월–목 10:00 – 21:00 &nbsp;/&nbsp; 금요일 휴무
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">티울영어</span>
+        <p>체계적인 성인 영어 전문 학원</p>
+      </div>
+      <div class="footer-info">
+        <p><strong>주소</strong> 경기 남양주시 다산중앙로123번길 21-3, 302호</p>
+        <p><strong>전화</strong> 010-2077-0346</p>
+        <p><strong>이메일</strong> tiulenglish@gmail.com</p>
+        <p><strong>사업자등록번호</strong> 548-50-01001</p>
+      </div>
+      <div class="footer-nav">
+        <a href="#intro">학원 소개</a>
+        <a href="#director">원장 소개</a>
+        <a href="#schedule">수업 스케줄</a>
+        <a href="#consult">상담 문의</a>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <div class="container">
+        <p>&copy; 2026 티울영어. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const top = target.getBoundingClientRect().top + window.scrollY - 72;
+          window.scrollTo({ top, behavior: 'smooth' });
+          document.getElementById('navLinks').classList.remove('open');
+        }
+      });
+    });
+
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    window.addEventListener('scroll', () => {
+      document.querySelector('.site-header').classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.section, .level-card, .reason-list li, .notice-item, .timetable-wrap, .private-banner').forEach(el => {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
