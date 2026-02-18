@@ -145,10 +145,105 @@ gunicorn -w 2 -b 0.0.0.0:8000 app:app
 
 ## 연락처
 
-- **이메일** 
-- **전화**  
-- **주소** 
+- **이메일** tiulenglish@gmail.com  
+- **전화** 010-2077-0346  
+- **주소** 경기 남양주시 다산중앙로123번길 21-3, 302호
 
 ---
 
 &copy; 2026 티울영어. All rights reserved.
+
+---
+
+## PythonAnywhere 배포 가이드
+
+### 최초 배포
+
+**1. Bash 콘솔 열기**
+
+PythonAnywhere 대시보드 → **Consoles** 탭 → **Bash** 클릭
+
+**2. 저장소 클론**
+
+```bash
+git clone https://github.com/miyeon00/tiulPage.git
+cd tiulPage
+```
+
+**3. 가상환경 생성 및 Flask 설치**
+
+```bash
+python3.10 -m venv venv
+source venv/bin/activate
+pip install flask
+```
+
+**4. Web App 생성**
+
+대시보드 → **Web** 탭 → **Add a new web app**
+- Framework: **Manual configuration**
+- Python version: **3.10**
+
+**5. WSGI 파일 수정**
+
+Web 탭 → **WSGI configuration file** 링크 클릭 → 전체 내용 교체:
+
+```python
+import sys
+import os
+
+path = '/home/tiul/tiulPage'
+if path not in sys.path:
+    sys.path.insert(0, path)
+
+venv_site = '/home/tiul/tiulPage/venv/lib/python3.10/site-packages'
+if venv_site not in sys.path:
+    sys.path.insert(0, venv_site)
+
+from app import app as application
+```
+
+**6. Web 탭 경로 설정**
+
+| 항목 | 값 |
+|---|---|
+| Source code | `/home/tiul/tiulPage` |
+| Virtualenv | `/home/tiul/tiulPage/venv` |
+| Static files URL | `/static/` |
+| Static files Directory | `/home/tiul/tiulPage/static` |
+
+**7. Reload 후 확인**
+
+Web 탭 → 초록색 **Reload** 버튼 클릭 → `https://tiul.pythonanywhere.com` 접속
+
+---
+
+### 코드 업데이트 (배포 이후)
+
+로컬에서 수정 → GitHub push 후, PythonAnywhere Bash 콘솔에서:
+
+```bash
+cd ~/tiulPage
+git pull
+```
+
+이후 Web 탭에서 **Reload** 버튼 클릭하면 반영 완료.
+
+**pull + reload 한 번에 처리하는 명령어:**
+
+```bash
+cd ~/tiulPage && git pull && touch /var/www/tiul_pythonanywhere_com_wsgi.py
+```
+
+즐겨찾기 해두면 편합니다.
+
+---
+
+### 상황별 업데이트 정리
+
+| 상황 | 할 일 |
+|---|---|
+| `schedule.json` 수정 | `git pull` → Reload |
+| HTML / CSS 수정 | `git pull` → Reload |
+| 새 패키지 추가 | `git pull` → `pip install 패키지명` → Reload |
+| 에러 발생 | Web 탭 → **Error log** 확인 |
