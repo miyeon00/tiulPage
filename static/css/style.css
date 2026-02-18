@@ -17,9 +17,9 @@
   --green:      #617530;
   --green-dark: #4d5d24;
   --green-pale: #e8edd9;
-  --dark:       #2c2c2a;
-  --mid:        #5c5c56;
-  --light:      #8e8e84;
+  --dark:       #1a1a18;
+  --mid:        #444440;
+  --light:      #6e6e66;
   --bg:         #f7f5f0;
   --surface:    #f0ede7;
   --white:      #ffffff;
@@ -36,7 +36,7 @@ html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
   font-family: var(--sans);
-  font-weight: 300;
+  font-weight: 400;
   color: var(--dark);
   background: var(--bg);
   line-height: 1.75;
@@ -109,7 +109,7 @@ ul { list-style: none; }
   line-height: 1.3;
 }
 .section-sub {
-  color: var(--mid);
+  color: var(--dark);
   font-size: 0.95rem;
   margin-top: -1.8rem;
   margin-bottom: 2.5rem;
@@ -153,7 +153,7 @@ ul { list-style: none; }
 }
 .nav-logo img { height: 36px; width: auto; }
 .logo-text-fallback {
-  display: block;
+  display: none;
   font-family: var(--serif);
   font-size: 1.4rem;
   font-weight: 600;
@@ -169,7 +169,7 @@ ul { list-style: none; }
 .nav-links a {
   font-size: 0.88rem;
   font-weight: 400;
-  color: var(--mid);
+  color: var(--dark);
   letter-spacing: 0.01em;
   transition: color var(--transition);
   position: relative;
@@ -276,7 +276,7 @@ ul { list-style: none; }
 
 .hero-sub {
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--mid);
   line-height: 1.8;
   margin-bottom: 2.5rem;
@@ -333,9 +333,11 @@ ul { list-style: none; }
 }
 
 .intro-philosophy p {
-  font-size: 0.95rem;
-  color: var(--mid);
-  margin-bottom: 1rem;
+  font-size: 0.96rem;
+  font-weight: 400;
+  color: #3a3a38;
+  line-height: 1.9;
+  margin-bottom: 1.1rem;
 }
 
 .reason-list { margin-top: 1rem; }
@@ -367,7 +369,7 @@ ul { list-style: none; }
 }
 .reason-list p {
   font-size: 0.88rem;
-  color: var(--mid);
+  color: var(--dark);
   line-height: 1.65;
 }
 
@@ -415,7 +417,7 @@ ul { list-style: none; }
 }
 .director-name span {
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--mid);
   margin-left: 0.4rem;
 }
@@ -445,7 +447,7 @@ ul { list-style: none; }
   position: relative;
   padding-left: 1rem;
   font-size: 0.92rem;
-  color: var(--mid);
+  color: var(--dark);
   margin-bottom: 0.35rem;
 }
 .bio-block ul li::before {
@@ -532,7 +534,7 @@ ul { list-style: none; }
 
 .card-desc {
   font-size: 0.85rem;
-  color: var(--mid);
+  color: var(--dark);
   line-height: 1.7;
   flex-grow: 1;
   margin-top: 0.4rem;
@@ -562,7 +564,7 @@ ul { list-style: none; }
 
 .blog-text p {
   font-size: 0.95rem;
-  color: var(--mid);
+  color: var(--dark);
   margin-bottom: 1.8rem;
   line-height: 1.8;
 }
@@ -591,7 +593,7 @@ ul { list-style: none; }
 
 .notice-title {
   font-size: 0.9rem;
-  color: var(--mid);
+  color: var(--dark);
 }
 
 .notice-more {
@@ -620,7 +622,7 @@ ul { list-style: none; }
 
 .consult-sub {
   font-size: 0.95rem;
-  color: var(--mid);
+  color: var(--dark);
   line-height: 1.8;
   margin-bottom: 2.5rem;
   margin-top: -1.5rem;
@@ -699,9 +701,10 @@ ul { list-style: none; }
   font-size: 0.82rem;
   margin-bottom: 0.4rem;
   line-height: 1.6;
+  color: rgba(255,255,255,0.8);
 }
 .footer-info strong {
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.95);
   font-weight: 500;
 }
 
@@ -713,7 +716,7 @@ ul { list-style: none; }
 }
 .footer-nav a {
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.75);
   transition: color var(--transition);
 }
 .footer-nav a:hover { color: rgba(255,255,255,0.85); }
@@ -850,7 +853,7 @@ ul { list-style: none; }
   flex-direction: column;
   gap: 0.15rem;
   font-size: 0.85rem;
-  color: var(--mid);
+  color: var(--dark);
   line-height: 1.6;
 }
 .meta-label {
@@ -919,7 +922,7 @@ ul { list-style: none; }
 }
 
 .td-name { font-weight: 400; color: var(--dark); min-width: 220px; }
-.td-days { color: var(--mid); min-width: 110px; }
+.td-days { color: var(--dark); min-width: 110px; }
 .td-time { font-family: var(--serif); font-size: 0.95rem; color: var(--green); font-weight: 500; }
 
 /* ③ 개인수업 배너 */
@@ -959,7 +962,7 @@ ul { list-style: none; }
 }
 .private-text p {
   font-size: 0.85rem;
-  color: var(--mid);
+  color: var(--dark);
   line-height: 1.6;
 }
 
@@ -1033,9 +1036,9 @@ ul { list-style: none; }
 .vtt-day {
   text-align: center;
   font-size: 0.78rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.08em;
-  color: var(--mid);
+  color: var(--dark);
   padding: 0.4rem 0;
   background: var(--surface);
   border-radius: 4px;
@@ -1053,8 +1056,8 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   font-size: 0.78rem;
-  color: var(--light);
-  font-weight: 400;
+  color: var(--mid);
+  font-weight: 500;
   letter-spacing: 0.01em;
   padding-right: 0.6rem;
   white-space: nowrap;
