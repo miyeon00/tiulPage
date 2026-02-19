@@ -1160,3 +1160,57 @@ ul { list-style: none; }
 /* 시험대비 행(4번째 = 14:00-16:30) 높이 강조 — nth-child 사용 */
 .vtt-row:nth-child(5) .vtt-cell { min-height: 72px; }
 .vtt-row:nth-child(5) .vtt-time { color: var(--dark); font-weight: 500; }
+
+
+.notice-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.notice-link:hover { background: var(--bg); }
+.notice-link:hover .notice-arrow { transform: translateX(3px); }
+
+.notice-tag {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--green);
+  background: var(--green-pale);
+  border: 1px solid rgba(97,117,48,0.25);
+  border-radius: 2px;
+  padding: 0.15rem 0.5rem;
+  flex-shrink: 0;
+}
+
+.notice-arrow {
+  margin-left: auto;
+  color: var(--light);
+  font-size: 0.85rem;
+  transition: transform var(--transition);
+  flex-shrink: 0;
+}
+
+/* 시험 종류별 태그 색상 */
+.tag-toefl {
+  color: #1a5c96;
+  background: #ddeaf8;
+  border-color: rgba(26, 92, 150, 0.25);
+}
+.tag-ielts {
+  color: #5c1a8c;
+  background: #edddf8;
+  border-color: rgba(92, 26, 140, 0.25);
+}
+.tag-opic {
+  color: #8c5a1a;
+  background: #f8eddd;
+  border-color: rgba(140, 90, 26, 0.25);
+}
+.tag-notice {
+  color: var(--green);
+  background: var(--green-pale);
+  border-color: rgba(97, 117, 48, 0.25);
+}
