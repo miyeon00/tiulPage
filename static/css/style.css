@@ -1214,3 +1214,96 @@ ul { list-style: none; }
   background: var(--green-pale);
   border-color: rgba(97, 117, 48, 0.25);
 }
+
+/* 배경 어둡게 처리 */
+.modal-overlay {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.7); /* 조금 더 어둡게 해서 집중도 향상 */
+    justify-content: center;
+    align-items: center;
+}
+
+/* 팝업 박스 */
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px; /* 곡률을 높여 부드러운 느낌 */
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    font-family: 'Pretendard', sans-serif; /* 폰트가 설치되어 있다면 적용 */
+}
+
+/* 닫기 버튼 (X) */
+.close-btn {
+    position: absolute;
+    right: 20px; top: 15px;
+    font-size: 24px; 
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.close-btn:hover { color: #333; }
+
+/* 본문 스타일링 */
+.modal-body h2 { font-size: 22px; margin-bottom: 15px; text-align: center; }
+.modal-body h3 { 
+    font-size: 17px;
+    border-bottom: 2px solid #f0f0f0; 
+    padding-bottom: 8px; 
+    margin-top: 25px;
+    color: #444;
+}
+.modal-body ul { list-style: none; padding: 5px 0; line-height: 1.8; font-size: 15px; }
+
+/* 상태 표시 강조 */
+.status-ok { font-weight: 600; color: #2ecc71; margin-left: 5px; }
+.status-no { font-weight: 600; color: #e74c3c; margin-left: 5px; }
+
+/* 🔥 수정된 카카오톡 안내 섹션 */
+.footer-info { 
+    background: #fdfdfd; 
+    border: 1px dashed #ddd; /* 점선으로 구분감 */
+    padding: 18px 10px; 
+    border-radius: 12px; 
+    margin-top: 30px; 
+    text-align: center;
+}
+
+.footer-info strong {
+    display: inline-block;
+    background-color: #fae100; /* 카카오 노란색 */
+    color: #3b1e1e;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 15px;
+    margin-top: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* 하단 버튼 및 체크박스 영역 */
+.modal-footer { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px; 
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.modal-footer label { font-size: 13px; color: #777; cursor: pointer; }
+.modal-footer button { 
+    padding: 10px 24px; 
+    cursor: pointer; 
+    background: #333; 
+    color: #fff; 
+    border: none; 
+    border-radius: 8px; 
+    font-weight: 600;
+    transition: background 0.2s;
+}
+.modal-footer button:hover { background: #000; }
