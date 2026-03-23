@@ -162,38 +162,18 @@
                  onerror="this.parentElement.classList.add('img-placeholder')" />
           </div>
           <div class="director-bio">
-            <p class="director-name">박 미 희 <span>원장</span></p>
-            <p class="director-tagline">
-              "영어가 트이는 순간, 당신의 세상이 넓어집니다."
-            </p>
-
-            <div class="bio-block">
-              <h4>학력</h4>
-              <ul>
-                <li>캐나다 TOP University of British Columbia 졸업 심리학 전공</li>
-                <li>미국 Georgia Institute of Technology, Data Science 수석 수료</li>
-                <li>미국 &amp; 캐나다 15년 거주</li>
-              </ul>
-            </div>
-
-            <div class="bio-block">
-              <h4>경력</h4>
-              <ul>
-                <li>현 티울영어 원장 (2025년 개원 ~ 현재)</li>
-                <li>전 YBM 종로 아이엘츠 강사</li>
-                <li>전 외국계 회사 Business analyst</li>
-                <li>전 파고다원 강남 강사</li>
-              </ul>
-            </div>
-
-            <div class="bio-block">
-              <h4>전문 분야</h4>
-              <ul>
-                <li>성인 의사소통 영어 및 발음 교정</li>
-                <li>비즈니스 이메일 및 프레젠테이션 영어</li>
-                <li>TOEFL / IELTS 전략적 수험 지도</li>
-              </ul>
-            </div>
+          <p class="director-name">{{ data.director.name }} <span>원장</span></p>
+          <p class="director-tagline">
+            "영어가 트이는 순간, 당신의 세상이 넓어집니다."
+          </p>
+        
+          <div class="bio-block">
+            <h4>경력</h4>
+            <ul>
+              {% for item in data.director.career %}
+              <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
           </div>
         </div>
       </div>

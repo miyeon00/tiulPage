@@ -1,0 +1,82 @@
+{
+  "month": "2026년 4월",
+  "timetable": {
+  "days": ["월", "화", "수", "목"],
+  "slots": [
+    { "time": "10:00 – 10:50", "cells": ["", "기초 회화", "", "기초 회화"] },
+    { "time": "11:00 – 11:50", "cells": ["입문 회화", "일상 회화", "", "일상 회화"] },
+    { "time": "12:00 – 12:50", "cells": ["", "입문 회화", "", "입문 회화"] },
+    { "time": "14:00 – 17:00", "cells": ["시험 대비 회화", "", "시험 대비 회화", ""] },
+    { "time": "18:00 – 18:50", "cells": ["일상 회화", "", "일상 회화", ""] },
+    { "time": "19:00 – 19:50", "cells": ["기초 회화", "", "기초 회화", ""] },
+    { "time": "20:00 – 20:50", "cells": ["일상 회화", "", "일상 회화", ""] }
+  ],
+  "colors": {
+    "기초 회화": "lv-basic",
+    "입문 회화": "lv-intro",
+    "일상 회화": "lv-daily",
+    "시험 대비 회화": "lv-exam"
+  },
+  "legend": [
+    { "class": "lv-basic", "label": "기초 회화" },
+    { "class": "lv-intro", "label": "입문 회화" },
+    { "class": "lv-daily", "label": "일상 회화" },
+    { "class": "lv-exam", "label": "시험 대비 회화" }
+  ]
+},
+  "notices": [
+  "4월 개강반 접수가 시작되었습니다. 인원 제한이 있으니 서둘러 주세요.",
+  "4월 6일 (월), 7일 (화) 정기 휴무입니다.",
+  "주차는 건물 지하 이용 가능\n1시간 수업 → 1시간 30분 무료\n2시간 수업 → 2시간 30분 무료\n상담 → 1시간 무료"
+],
+  "director": {
+    "name": "박미희",
+    "photo": "director.jpg",
+    "message": "\"영어가 트이는 순간, 당신의 세상이 넓어집니다.\"",
+    "education": [
+      "캐나다 University of British Columbia 졸업 — 심리학 전공",
+      "미국 Georgia Institute of Technology, Data Science 수석 수료",
+      "미국 & 캐나다 15년 거주"
+    ],
+    "career": [
+      "현 티울영어 원장 (2025년 개원 ~ 현재)",
+      "전 YBM 종로 아이엘츠 강사",
+      "전 외국계 회사 Business Analyst",
+      "전 파고다원 강남 강사"
+    ],
+    "expertise": [
+      "성인 의사소통 영어 및 발음 교정",
+      "비즈니스 이메일 및 프레젠테이션 영어",
+      "TOEFL / IELTS 전략적 수험 지도"
+    ]
+  },
+  "weekly_english": {
+    "type": "sentence",
+    "english": "Consistency is the foundation of excellence.",
+    "korean": "꾸준함이 탁월함의 기초입니다."
+  },
+  "contest": {
+    "enabled": true,
+    "title": "2026 전국 영어 말하기 대회",
+    "date": "2026년 4월 12일 (일)",
+    "image": "contest.jpg"
+  },
+  "achievements": [
+  { "exam": "TOEFL", "score": "90+", "label": "목표 점수 달성" },
+  { "exam": "TOEFL", "score": "80",  "label": "iBT 달성"},
+  { "exam": "IELTS", "score": "6.5", "label": "Overall 달성"},
+  { "exam": "OPIc",  "score": "IH",  "label": "등급 달성"}
+],
+"event": {
+  "enabled": true,
+  "poster": "event_april.png",
+  "title": "2026 상반기 네이버 리뷰 이벤트",
+  "period": "2026년 4월 1일 ~ 7월 31일",
+  "details": [
+    "네이버 '티울영어' 검색 후 리뷰 작성",
+    "카카오톡 채널에 리뷰 캡처 제출",
+    "참가자 전원 스타벅스 커피쿠폰 증정",
+    "마지막날 : 금상(1명) · 은상(1명) 추가 시상"
+  ]
+}
+}

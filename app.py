@@ -4,12 +4,21 @@ from flask import Flask, render_template, send_from_directory
 
 app = Flask(__name__)
 
-@app.route("/")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+def load_data():
+    with open(os.path.join(BASE_DIR, 'data.json'), encoding='utf-8') as f:
+        return json.load(f)
+
+@app.route('/')
 def index():
-    schedule_path = os.path.join(os.path.dirname(__file__), "schedule.json")
-    with open(schedule_path, "r", encoding="utf-8") as f:
-        schedule = json.load(f)
-    return render_template("index.html", schedule=schedule)
+    data = load_data()
+    return render_template('index.html', data=data, schedule=data)
+
+@app.route('/tv')
+def tv():
+    data = load_data()
+    return render_template('tv.html', data=data)
 
 @app.route('/sitemap.xml')
 def sitemap():
