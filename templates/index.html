@@ -168,13 +168,29 @@
           </p>
         
           <div class="bio-block">
-            <h4>경력</h4>
-            <ul>
-              {% for item in data.director.career %}
-              <li>{{ item }}</li>
-              {% endfor %}
-            </ul>
-          </div>
+          <h4>학력</h4>
+          <ul>
+            {% for item in data.director.education %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="bio-block">
+          <h4>경력</h4>
+          <ul>
+            {% for item in data.director.career %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="bio-block">
+          <h4>전문 분야</h4>
+          <ul>
+            {% for item in data.director.expertise %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
         </div>
       </div>
     </section>
