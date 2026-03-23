@@ -12,189 +12,150 @@
 </head>
 <body>
 
-  <div class="tv-root" id="tvRoot">
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="topbar__brand">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="티울영어 로고" class="topbar__logo" onerror="this.style.display='none'" />
+      <div class="topbar__names">
+        <span class="topbar__en">TIUL ENGLISH</span>
+        <span class="topbar__ko">티울영어</span>
+      </div>
+    </div>
+    <div class="topbar__datetime">
+      <span class="topbar__date" id="clock-date"></span>
+      <span class="topbar__time" id="clock-time"></span>
+    </div>
+  </header>
 
-    <!-- ═══ TOP BAR ═══ -->
-    <header class="topbar">
-      <div class="topbar__brand">
-        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="티울영어 로고" class="topbar__logo" onerror="this.style.display='none'" />
-        <div class="topbar__names">
-          <span class="topbar__en">TIUL ENGLISH</span>
-          <span class="topbar__ko">티울영어</span>
+  <!-- MAIN GRID -->
+  <main class="dashboard">
+
+    <!-- LEFT -->
+    <div class="left-column">
+
+      <!-- 시간표 -->
+      <section class="panel panel--schedule">
+        <div class="panel__header">
+          <span class="panel__label">수업 시간표</span>
+          <span class="panel__sublabel">{{ data.month }}</span>
         </div>
-      </div>
-      <div class="topbar__datetime">
-        <span class="topbar__date" id="clock-date"></span>
-        <span class="topbar__time" id="clock-time"></span>
-      </div>
-    </header>
-
-    <!-- ═══ MAIN GRID ═══ -->
-    <main class="dashboard">
-
-      <!-- ─── LEFT ─── -->
-      <div class="left-column">
-
-        <!-- 시간표 -->
-        <section class="panel panel--schedule">
-          <div class="panel__header">
-            <span class="panel__label">수업 시간표</span>
-            <span class="panel__sublabel">{{ data.month }}</span>
+        <div class="visual-tt">
+          <div class="vtt-head">
+            <div class="vtt-time-col"></div>
+            {% for day in data.timetable.days %}
+            <div class="vtt-day">{{ day }}</div>
+            {% endfor %}
           </div>
-          <div class="visual-tt">
-            <div class="vtt-head">
-              <div class="vtt-time-col"></div>
-              {% for day in data.timetable.days %}
-              <div class="vtt-day">{{ day }}</div>
-              {% endfor %}
-            </div>
-            {% for slot in data.timetable.slots %}
-            <div class="vtt-row">
-              <div class="vtt-time">{{ slot.time }}</div>
-              {% for cell in slot.cells %}
-              <div class="vtt-cell {% if cell %}filled {{ data.timetable.colors[cell] }}{% else %}empty{% endif %}">
-                {% if cell %}
-                <span class="cell-name">{{ cell }}</span>
-                {% if cell == "시험 대비 회화" %}<span class="cell-sub">토플 / 아이엘츠</span>{% endif %}
-                {% endif %}
-              </div>
-              {% endfor %}
+          {% for slot in data.timetable.slots %}
+          <div class="vtt-row">
+            <div class="vtt-time">{{ slot.time }}</div>
+            {% for cell in slot.cells %}
+            <div class="vtt-cell {% if cell %}filled {{ data.timetable.colors[cell] }}{% else %}empty{% endif %}">
+              {% if cell %}
+              <span class="cell-name">{{ cell }}</span>
+              {% if cell == "시험 대비 회화" %}<span class="cell-sub">토플 / 아이엘츠</span>{% endif %}
+              {% endif %}
             </div>
             {% endfor %}
-            <div class="vtt-legend">
-              {% for item in data.timetable.legend %}
-              <div class="legend-item">
-                <span class="legend-dot {{ item.class }}"></span>
-                <span class="legend-label">{{ item.label }}</span>
-                {% if item.status == 'full' %}
-                <span class="badge badge--full">마감</span>
-                {% elif item.status == 'closing' %}
-                <span class="badge badge--closing">마감임박</span>
-                {% endif %}
-              </div>
-              {% endfor %}
-            </div>
           </div>
-        </section>
-
-        <!-- 하단: 공지 + 성과 -->
-        <div class="left-bottom">
-
-          <section class="panel panel--notices">
-            <div class="panel__header">
-              <span class="panel__label">공지사항</span>
+          {% endfor %}
+          <div class="vtt-legend">
+            {% for item in data.timetable.legend %}
+            <div class="legend-item">
+              <span class="legend-dot {{ item.class }}"></span>
+              <span class="legend-label">{{ item.label }}</span>
+              {% if item.status == 'full' %}
+              <span class="badge badge--full">마감</span>
+              {% elif item.status == 'closing' %}
+              <span class="badge badge--closing">마감임박</span>
+              {% endif %}
             </div>
-            <ul class="notice-list">
-              {% for notice in data.notices %}
-              <li>{{ notice | replace('\n', '<br>') | safe }}</li>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <!-- 공지사항 -->
+      <section class="panel panel--notices">
+        <div class="panel__header">
+          <span class="panel__label">공지사항</span>
+        </div>
+        <ul class="notice-list">
+          {% for notice in data.notices %}
+          <li>{{ notice }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <!-- 원장 소개 -->
+      <section class="panel panel--director">
+        <div class="panel__header">
+          <span class="panel__label">원장 소개</span>
+        </div>
+        <div class="director-body">
+          <div class="director-photo-wrap">
+            <img src="{{ url_for('static', filename='images/' + data.director.photo) }}"
+                 alt="{{ data.director.name }}" class="director-photo"
+                 onerror="this.style.display='none'" />
+          </div>
+          <div class="director-info">
+            <p class="director-name">{{ data.director.name }}</p>
+            <ul class="director-career">
+              {% for item in data.director.career %}
+              <li>{{ item }}</li>
               {% endfor %}
             </ul>
-          </section>
-
-          <section class="panel panel--achievements">
-            <div class="panel__header">
-              <span class="panel__label">수강생 성과</span>
-            </div>
-            <div class="achievement-grid">
-              {% for item in data.achievements %}
-              <div class="achievement-card">
-                <span class="ach-exam ach-exam--{{ item.exam | lower }}">{{ item.exam }}</span>
-                <span class="ach-score">{{ item.score }}</span>
-                <span class="ach-label">{{ item.label }}</span>
-                <!-- <span class="ach-period">{{ item.period }} 만에</span> -->
-              </div>
-              {% endfor %}
-            </div>
-          </section>
-
+            <p class="director-message">{{ data.director.message }}</p>
+          </div>
         </div>
+      </section>
 
-        <!-- 원장 소개 -->
-        <section class="panel panel--director">
-          <div class="panel__header">
-            <span class="panel__label">원장 소개</span>
+    </div>
+
+    <!-- RIGHT: 이벤트 -->
+    {% if data.event.enabled %}
+    <aside class="right-column">
+      <section class="panel panel--event">
+        <div class="panel__header">
+          <span class="panel__label">{{ data.event.title }}</span>
+        </div>
+        <div class="event-body">
+          <div class="event-poster">
+            <img src="{{ url_for('static', filename='images/' + data.event.poster) }}"
+                 alt="이벤트 포스터"
+                 onerror="this.style.display='none'" />
           </div>
-          <div class="director-body">
-            <div class="director-photo-wrap">
-              <img src="{{ url_for('static', filename='images/' + data.director.photo) }}"
-                   alt="{{ data.director.name }}" class="director-photo"
-                   onerror="this.style.display='none'" />
+          <div class="event-info">
+            <div class="event-period">
+              <span class="event-period-label">기간</span>
+              <span class="event-period-value">{{ data.event.period }}</span>
             </div>
-            <div class="director-info">
-              <p class="director-name">{{ data.director.name }}</p>
-              <ul class="director-career">
-                {% for item in data.director.career %}
-                <li>{{ item }}</li>
-                {% endfor %}
-              </ul>
-              <p class="director-message">{{ data.director.message }}</p>
-            </div>
+            <ul class="event-items">
+              {% for detail in data.event.details %}
+              <li>{{ detail }}</li>
+              {% endfor %}
+            </ul>
           </div>
-        </section>
+        </div>
+      </section>
+    </aside>
+    {% endif %}
 
-      </div>
+  </main>
 
-      <!-- ─── RIGHT: 이벤트 ─── -->
-      {% if data.event.enabled %}
-      <aside class="right-column">
-        <section class="panel panel--event">
-          <div class="panel__header">
-            <span class="panel__label">{{ data.event.title }}</span>
-          </div>
-          <div class="event-body">
-            <div class="event-poster">
-              <img src="{{ url_for('static', filename='images/' + data.event.poster) }}"
-                   alt="이벤트 포스터"
-                   onerror="this.style.display='none'" />
-            </div>
-            <div class="event-info">
-              <div class="event-period">
-                <span class="event-period-label">기간</span>
-                <span class="event-period-value">{{ data.event.period }}</span>
-              </div>
-              <ul class="event-items">
-                {% for detail in data.event.details %}
-                <li>{{ detail }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-        </section>
-      </aside>
-      {% endif %}
-
-    </main>
-
-    <!-- ═══ BOTTOM BAR — 시계 ═══ -->
-    <footer class="bottom-bar">
-      <div class="bottom-clock">
-        <span class="bottom-date" id="bottom-date"></span>
-        <span class="bottom-time" id="bottom-time"></span>
-      </div>
-      <div class="bottom-tagline">
-        <span class="bottom-en">{{ data.weekly_english.english }}</span>
-        <span class="bottom-ko">{{ data.weekly_english.korean }}</span>
-      </div>
-    </footer>
-
-  </div><!-- /tv-root -->
+  <!-- BOTTOM BAR -->
+  <footer class="bottom-bar">
+    <div class="bottom-clock">
+      <span class="bottom-date" id="bottom-date"></span>
+      <span class="bottom-time" id="bottom-time"></span>
+    </div>
+    <div class="bottom-tagline">
+      <span class="bottom-en">{{ data.weekly_english.english }}</span>
+      <span class="bottom-ko">{{ data.weekly_english.korean }}</span>
+    </div>
+  </footer>
 
   <script>
-    /* ── TV 스케일 맞춤 ── */
-    function scaleToFit() {
-      const root = document.getElementById('tvRoot');
-      const scaleX = window.innerWidth  / 1920;
-      const scaleY = window.innerHeight / 1080;
-      const scale  = Math.min(scaleX, scaleY);
-      root.style.transform = `scale(${scale})`;
-      root.style.transformOrigin = 'top left';
-      document.body.style.width  = window.innerWidth  + 'px';
-      document.body.style.height = window.innerHeight + 'px';
-    }
-    scaleToFit();
-    window.addEventListener('resize', scaleToFit);
-
-    /* ── 시계 ── */
     function updateClock() {
       const now = new Date();
       const weekdays = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'];
@@ -202,9 +163,10 @@
       const m = String(now.getMonth() + 1).padStart(2, '0');
       const d = String(now.getDate()).padStart(2, '0');
       const w = weekdays[now.getDay()];
-      const timeStr = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
-      const dateStr = `${y}년 ${m}월 ${d}일 (${w})`;
-
+      const h = String(now.getHours()).padStart(2, '0');
+      const mi = String(now.getMinutes()).padStart(2, '0');
+      const dateStr = y + '년 ' + m + '월 ' + d + '일 (' + w + ')';
+      const timeStr = h + ':' + mi;
       document.getElementById('clock-date').textContent = dateStr;
       document.getElementById('clock-time').textContent = timeStr;
       document.getElementById('bottom-date').textContent = dateStr;
