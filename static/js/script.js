@@ -90,3 +90,20 @@ const resultObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.result-card').forEach(card => {
     resultObserver.observe(card);
 });
+
+// 공지사항 모달
+function closeModal() {
+  const modal = document.getElementById('noticeModal');
+  const checked = document.getElementById('todayCheck').checked;
+  if (checked) {
+    localStorage.setItem('hideNotice', new Date().toDateString());
+  }
+  modal.classList.remove('active');
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const hidden = localStorage.getItem('hideNotice');
+  if (hidden !== new Date().toDateString()) {
+    document.getElementById('noticeModal').classList.add('active');
+  }
+});

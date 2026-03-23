@@ -1302,25 +1302,119 @@ ul { list-style: none; }
   margin-top: 0;
 }
 
-/* 하단 버튼 및 체크박스 영역 */
-.modal-footer { 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 25px; 
-    padding-top: 15px;
-    border-top: 1px solid #f0f0f0;
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
 }
 
-.modal-footer label { font-size: 13px; color: #777; cursor: pointer; }
-.modal-footer button { 
-    padding: 10px 24px; 
-    cursor: pointer; 
-    background: #333; 
-    color: #fff; 
-    border: none; 
-    border-radius: 8px; 
-    font-weight: 600;
-    transition: background 0.2s;
+.modal-overlay.active {
+  display: flex;
 }
-.modal-footer button:hover { background: #000; }
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  font-size: 22px;
+  cursor: pointer;
+  color: #999;
+  line-height: 1;
+}
+
+.close-btn:hover { color: #333; }
+
+.modal-content h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  color: #1a1a1a;
+}
+
+.modal-intro {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+}
+
+.class-section {
+  margin-bottom: 1rem;
+}
+
+.class-section h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem;
+}
+
+.class-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.class-section ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #1a1a1a;
+  padding: 6px 10px;
+  background: #f7f7f7;
+  border-radius: 6px;
+}
+
+.status-ok { color: #1D9E75; font-weight: 600; }
+.status-no { color: #E24B4A; font-weight: 600; }
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 1rem;
+  margin-top: 1.25rem;
+}
+
+.modal-footer label {
+  font-size: 13px;
+  color: #888;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modal-footer button {
+  padding: 8px 20px;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal-footer button:hover { background: #333; }
