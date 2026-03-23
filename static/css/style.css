@@ -1264,25 +1264,42 @@ ul { list-style: none; }
 .status-ok { font-weight: 600; color: #2ecc71; margin-left: 5px; }
 .status-no { font-weight: 600; color: #e74c3c; margin-left: 5px; }
 
-/* 🔥 수정된 카카오톡 안내 섹션 */
-.footer-info { 
-    background: #fdfdfd; 
-    border: 1px dashed #ddd; /* 점선으로 구분감 */
-    padding: 18px 10px; 
-    border-radius: 12px; 
-    margin-top: 30px; 
-    text-align: center;
+/* ── FOOTER ── */
+.footer-info {
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  margin-top: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-info p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #ccc;
+  margin: 0;
+  line-height: 1.5;
 }
 
 .footer-info strong {
-    display: inline-block;
-    background-color: #fae100; /* 카카오 노란색 */
-    color: #3b1e1e;
-    padding: 3px 10px;
-    border-radius: 6px;
-    font-size: 15px;
-    margin-top: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: inline-block;
+  background-color: transparent;  /* 노란 배경 제거 */
+  color: #ccc;                     /* 주변 텍스트와 동일한 색 */
+  padding: 0;
+  border-radius: 0;
+  font-size: 13px;
+  font-weight: 700;
+  min-width: 80px;
+  text-align: left;
+  flex-shrink: 0;
+  box-shadow: none;
+  margin-top: 0;
 }
 
 /* 하단 버튼 및 체크박스 영역 */
