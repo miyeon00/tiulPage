@@ -35,7 +35,7 @@
         <ul>
           <li><span>월/목 11시 입문 영어회화반</span><span class="status-ok">수강 가능</span></li>
           <li><span>월/수 18시 일상 영어회화반</span><span class="status-ok">수강 가능</span></li>
-          <li><span>월/수 19시 기초 영어회화반</span><span class="status-ok">수강 가능</span></li>
+          <!-- <li><span>월/수 19시 기초 영어회화반</span><span class="status-ok">수강 가능</span></li> -->
           <li><span>월/수 20시 일상 영어회화반</span><span class="status-ok">수강 가능</span></li>
           <li><span>화/목 10시 기초 영어회화반</span><span class="status-no">마감</span></li>
           <li><span>화/목 11시 일상 영어회화반</span><span class="status-ok">수강 가능</span></li>
@@ -79,6 +79,7 @@
         <li><a href="#intro">학원 소개</a></li>
         <li><a href="#director">원장 소개</a></li>
         <li><a href="#schedule">수업 스케줄</a></li>
+        <li><a href="#event">이벤트</a></li>
         <li><a href="#blog">블로그</a></li>
         <li><a href="#consult" class="nav-cta">상담 문의</a></li>
       </ul>
@@ -257,7 +258,7 @@
               ("12:00 – 12:50", ["", "입문 회화", "", "입문 회화"]),
               ("14:00 – 16:30", ["시험 대비 회화", "", "시험 대비 회화", ""]),
               ("18:00 – 18:50", ["일상 회화", "", "일상 회화", ""]),
-              ("19:00 – 19:50", ["기초 회화", "", "기초 회화", ""]),
+              ("19:00 – 19:50", ["", "", "", ""]),
               ("20:00 – 20:50", ["일상 회화", "", "일상 회화", ""])
             ] -%}
             {%- set level_colors = {
@@ -303,6 +304,77 @@
       </div>
     </section>
 
+    <!-- ── EVENT ── -->
+<section class="section event-section" id="event">
+  <div class="container">
+    <div class="section-label">Event</div>
+    <h2 class="section-title">진행 중인 이벤트</h2>
+ 
+    <div class="event-card">
+      <!-- 이벤트 이미지 -->
+      <div class="event-image-wrap">
+        <img
+          src="{{ url_for('static', filename='images/event_reviews.png') }}"
+          alt="2026년 상반기 네이버 리뷰 이벤트"
+        />
+      </div>
+ 
+      <!-- 이벤트 정보 + 버튼 -->
+      <div class="event-info">
+        <div class="event-badge">2026 상반기</div>
+        <h3 class="event-title">네이버 리뷰 이벤트</h3>
+        <p class="event-desc">
+          티울영어 네이버 리뷰를 작성해주시면<br />
+          참가상(스타벅스 쿠폰)은 매월 마지막 날 취합 후 전송,<br />
+          금상·은상은 이벤트 마지막 날(7월 31일)에 수여합니다!<br />
+          <span class="event-period">📅 2026년 4월 1일 – 7월 31일</span>
+        </p>
+ 
+        <div class="event-steps">
+          <div class="event-step">
+            <span class="step-num">01</span>
+            <div>
+              <strong>리뷰 작성</strong>
+              <p>네이버에서 "티울영어" 검색 후 리뷰 작성</p>
+            </div>
+          </div>
+          <div class="event-step">
+            <span class="step-num">02</span>
+            <div>
+              <strong>캡처 제출</strong>
+              <p>카카오톡 채널 "티울 성인영어회화로"에 리뷰 캡처 전송</p>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="event-buttons">
+          <a
+            href="https://m.place.naver.com/place/1654464766/review/visitor"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-event btn-naver-event"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M16.273 12.845L7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727z"/>
+            </svg>
+            네이버에서 리뷰 쓰기
+          </a>
+          <a
+            href="https://pf.kakao.com/_Cqynn/chat"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-event btn-kakao-event"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 3C7.03 3 3 6.36 3 10.5c0 2.7 1.74 5.07 4.35 6.45l-.9 3.3 3.75-2.46c.57.09 1.17.12 1.8.12 4.97 0 9-3.36 9-7.5S16.97 3 12 3z"/>
+            </svg>
+            카카오톡으로 캡처 제출
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+    </section>
     <!-- ── BLOG ── -->
     <section class="section blog-section" id="blog">
   <div class="container">
@@ -349,7 +421,7 @@
     </div>
     </div>
   </div>
-</section>
+    </section>
 
     <!-- ── CONSULTATION ── -->
     <section class="section consult-section" id="consult">
