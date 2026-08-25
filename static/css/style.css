@@ -1263,6 +1263,10 @@ ul { list-style: none; }
 /* 상태 표시 강조 */
 .status-ok { font-weight: 600; color: #2ecc71; margin-left: 5px; }
 .status-no { font-weight: 600; color: #e74c3c; margin-left: 5px; }
+.status-soon {
+  color: #e67e22;      /* 주황색 계열 */
+  font-weight: bold;
+}
 
 /* ── FOOTER ── */
 .footer-info {

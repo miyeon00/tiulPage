@@ -25,21 +25,20 @@
   <div id="noticeModal" class="modal-overlay">
  <div class="modal-content">
     <span class="close-btn" onclick="closeModal()">&times;</span>
-    <h2>📢 티울영어 8월 수업 안내</h2>
+    <h2>📢 티울영어 9월 수업 안내</h2>
 
     <div class="modal-body">
-      <p class="modal-intro">안녕하세요, 티울영어입니다!<br>8월 수업 일정과 수강 가능 여부를 안내드립니다.</p>
+      <p class="modal-intro">안녕하세요, 티울영어입니다!<br>9월 수업 일정과 수강 가능 여부를 안내드립니다.</p>
 
       <div class="class-section">
         <h3>📚 정규반</h3>
         <ul>
-          <li><span>월 11시 / 목 12시 입문 영어회화반</span><span class="status-ok">수강 가능</span></li>
-          <li><span>월 18시 일상 영어회화반</span><span class="status-ok">수강 가능</span></li>
-          <li><span>월/수 20시 일상 영어회화반</span><span class="status-ok">수강 가능</span></li>
-          <li><span>화/목 10시 기초 영어회화반</span><span class="status-ok">수강 가능</span></li>
+          <li><span>월/수 18시 일상 영어회화반</span><span class="status-ok">수강 가능</span></li>
+          <li><span>월/수 20시 일상 영어회화반</span><span class="status-soon">마감 임박</span></li>
+          <li><span>화/목 10시 기초 영어회화반</span><span class="status-soon">마감 임박</span></li>
           <li><span>화/목 11시 일상 영어회화반</span><span class="status-ok">수강 가능</span></li>
-          <li><span>화/목 12시 입문 영어회화반</span><span class="status-ok">수강 가능</span></li>
-          <li><span>화/목 18시 기초 영어회화반</span><span class="status-ok">수강 가능</span></li>
+          <li><span>화/목 12시 입문 영어회화반</span><span class="status-soon">마감 임박</span></li>
+          <li><span>화/목 18시 기초 영어회화반</span><span class="status-soon">마감 임박</span></li>
           <li><span>개인레슨</span><span class="status-no">마감</span></li>
         </ul>
       </div>
@@ -51,10 +50,9 @@
         </ul>
       </div> -->
       <div class="class-section notice-holiday">
-        <h3>📅 8월 휴무 안내</h3>
+        <h3>📅 9월 휴무 안내</h3>
         <ul>
-          <li>8월 15일 (토) — 광복절 </li>
-          <li>8월 27일 (월) — 광복절 대체 휴무</li>
+          <li>9월 24일 (목) - 9월 26일 (토) — 추석 휴무</li>
         </ul>
       </div>
     </div>
@@ -256,10 +254,10 @@
             <!-- 시간 슬롯 행들: schedule.timetable 에서 중복없이 시간 추출 후 렌더 -->
             {%- set slots = [
               ("10:00 – 10:50", ["", "기초 회화", "", "기초 회화"]),
-              ("11:00 – 11:50", ["입문 회화", "일상 회화", "", "일상 회화"]),
+              ("11:00 – 11:50", ["", "일상 회화", "", "일상 회화"]),
               ("12:00 – 12:50", ["", "입문 회화", "", "입문 회화"]),
               ("14:00 – 16:30", ["시험 대비 회화", "", "시험 대비 회화", ""]),
-              ("18:00 – 18:50", ["일상 회화", "기초 회화", "", "기초 회화"]),
+              ("18:00 – 18:50", ["일상 회화", "기초 회화", "일상 회화", "기초 회화"]),
               ("19:00 – 19:50", ["", "", "", ""]),
               ("20:00 – 20:50", ["일상 회화", "", "일상 회화", ""])
             ] -%}
@@ -395,11 +393,6 @@
         </a>
       </div>
       <div class="blog-notice-preview">
-      <a href="https://blog.naver.com/tiulenglish/224309740851" target="_blank" rel="noopener noreferrer" class="notice-item notice-link">
-        <span class="notice-tag tag-conversation">회화</span>
-        <span class="notice-title">[티울영어] 6월 기초회화반, 호텔에서 생긴 문제를 영어로 해결하기</span>
-        <span class="notice-arrow">→</span>
-      </a>
       <a href="https://blog.naver.com/tiulenglish/224186922746" target="_blank" rel="noopener noreferrer" class="notice-item notice-link">
         <span class="notice-tag tag-toefl">TOEFL</span>
         <span class="notice-title">2026년 개정판 토플 iBT 2개월 만에 목표 점수 4.0 달성!</span>

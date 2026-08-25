@@ -1,10 +1,10 @@
 {
-  "month": "2026년 8월",
+  "month": "2026년 9월",
   "timetable": {
   "days": ["월", "화", "수", "목"],
   "slots": [
     { "time": "10:00 – 10:50", "cells": ["", "기초 회화", "", "기초 회화"] },
-    { "time": "11:00 – 11:50", "cells": ["입문 회화", "일상 회화", "", "일상 회화"] },
+    { "time": "11:00 – 11:50", "cells": ["", "일상 회화", "", "일상 회화"] },
     { "time": "12:00 – 12:50", "cells": ["", "입문 회화", "", "입문 회화"] },
     { "time": "14:00 – 17:00", "cells": ["시험 대비 회화", "", "시험 대비 회화", ""] },
     { "time": "18:00 – 18:50", "cells": ["일상 회화", "", "일상 회화", ""] },
@@ -32,20 +32,20 @@
     "photo": "director.jpg",
     "message": "\"영어가 트이는 순간, 당신의 세상이 넓어집니다.\"",
     "education": [
-      "캐나다 University of British Columbia 졸업 — 심리학 전공",
-      "미국 Georgia Institute of Technology, Data Science 수석 수료",
-      "미국 & 캐나다 15년 거주"
+      "캐나다 TOP 3 University of British Columbia 졸업 — 심리학 전공",
+      "미국 명문 Georgia Institute of Technology, Data Science 수석 수료",
+      "미국 애틀란타 & 캐나다 벤쿠버 16년 거주"
     ],
     "career": [
       "현 티울영어 원장 (2025년 개원 ~ 현재)",
-      "전 YBM 종로 아이엘츠 강사",
-      "전 외국계 회사 Business Analyst",
-      "전 파고다원 강남 강사"
+      "전 YBM 종로 아이엘츠 전과목 강사",
+      "전 외국계 회사 Business Analyst - National Museum of Singapore(싱가폴 국립 박물관) 및 국내 대형 핀테크사, 바이오 기업 및 의료재단 프로젝트 수행 ",
+      "전 파고다원 강남 강사 (국내 대형 성인영어회화 학원)"
     ],
     "expertise": [
-      "성인 의사소통 영어 및 발음 교정",
-      "비즈니스 이메일 및 프레젠테이션 영어",
-      "TOEFL / IELTS 전략적 수험 지도"
+      "성인 실전 영어회화 및 발음 교정 (입문, 기초, 여행, 일상 등)",
+      "외국계 기업 취업 면접 및 미국 비자 인터뷰 영어",
+      "TOEFL / IELTS 전과목 (READING, WRITING, LISTENING, SPEAKING) 전략적 수험 지도"
     ]
   },
   "weekly_english": {
