@@ -1601,3 +1601,41 @@ ul { list-style: none; }
   background-color: #e8f5e9;
   color: #2e7d32;
 }
+
+.poster-modal {
+  padding: 0;
+  overflow: hidden;
+  /* 가로: 최대 480px, 화면 폭의 92%, 화면 높이 - 푸터 여유분 중 가장 작은 값 */
+  width: min(480px, 92vw, calc(100vh - 110px));
+  max-width: none;
+  max-height: none;
+}
+
+.poster-wrap {
+  position: relative;
+  line-height: 0;
+}
+
+.poster-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 이미지와 푸터 사이 흰 여백 제거 */
+.poster-modal .modal-footer {
+  margin: 0;
+  padding: 10px 14px;
+  border-top: none;
+}
+
+/* 이미지 속 "수강 상담하기" 버튼 위치에 맞춘 클릭 영역 (비율 기준) */
+.poster-cta {
+  position: absolute;
+  left: 8%;
+  top: 77.5%;
+  width: 31%;
+  height: 8.8%;
+  border-radius: 999px;
+  cursor: pointer;
+}
